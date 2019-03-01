@@ -51,7 +51,20 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         }
+
+
+    public void setAlarm(View view) {
+        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                .putExtra(AlarmClock.EXTRA_MESSAGE, "Creating alarm")
+                .putExtra(AlarmClock.EXTRA_DAYS,1)
+                .putExtra(AlarmClock.EXTRA_HOUR, 1)
+                .putExtra(AlarmClock.EXTRA_MINUTES, 1)
+                .putExtra(AlarmClock.EXTRA_VIBRATE,true);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
+}
 
 
 /*  public void createNote(String subject, String text) {
